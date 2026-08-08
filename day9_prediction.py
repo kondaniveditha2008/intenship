@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 # Load the dataset
-data = pd.read_csv("student_scores.csv")
+data = pd.read_csv("data/student_scores.csv")
 
 # Input (Hours) and Output (Scores)
 X = data[["Hours"]]
@@ -17,6 +17,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Create and train the model
 model = LinearRegression()
 model.fit(X_train, y_train)
+hours = float(input("Enter study hours: "))
+
 
 # Predict scores for the test data
 predictions = model.predict(X_test)
